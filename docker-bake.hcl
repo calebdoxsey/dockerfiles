@@ -8,7 +8,7 @@ group "default" {
 
 target "exhale" {
   context = "exhale"
-  tags    = ["docker.io/calebdoxsey/exhale:${exhale_version}"]
+  tags    = ["calebdoxsey/exhale:${exhale_version}"]
   args = {
     EXHALE_VERSION = "${exhale_version}"
   }
