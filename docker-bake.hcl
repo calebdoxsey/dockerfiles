@@ -6,8 +6,9 @@ variable "exhale_version" {
   default = "v1.1.6"
 }
 
+
 group "default" {
-  targets = ["bento4", "exhale"]
+  targets = ["bento4", "exhale", "ffmpeg"]
 }
 
 target "bento4" {
@@ -26,4 +27,10 @@ target "exhale" {
   args = {
     EXHALE_VERSION = "${exhale_version}"
   }
+}
+
+target "ffmpeg" {
+  context   = "ffmpeg"
+  tags      = ["docker.io/calebdoxsey/ffmpeg:latest"]
+  platforms = ["linux/amd64", "linux/arm64"]
 }
